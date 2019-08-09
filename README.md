@@ -1,5 +1,7 @@
 # random-qoute-generator
 
+![project-image](src/assets/project_image.png)
+
 ## Project setup
 ```
 npm install
