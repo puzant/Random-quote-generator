@@ -1,4 +1,4 @@
-# random-qoute-generator
+# Random-quote-generator
 
 ![project-image](src/assets/project_image.png)
 
