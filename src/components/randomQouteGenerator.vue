@@ -55,7 +55,16 @@ quotes = [
   }
 
   copySuccess() {
-    console.log('done')
+    this.$swal({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      type: 'success',
+      title: 'Qoute,',
+      text: 'copied!'
+    });
+
   }
 
 }
