@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <randomQouteGenerator />
+    <randomQuoteGenerator />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import randomQouteGenerator from './components/randomQouteGenerator'
+import randomQuoteGenerator from './components/randomQuoteGenerator'
 
 @Component({
   components: {
-    randomQouteGenerator
+    randomQuoteGenerator
   },
 })
 export default class App extends Vue {}
