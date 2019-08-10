@@ -152,10 +152,11 @@ hr
   width: 120px
   font-weight: bold
   transition: .5s
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0),0px 0px 0px rgba(0, 0, 0, 0)
   &:hover
+    box-shadow: 9px -9px 0px rgba(0, 0, 0, 0.15),-9px 9px 0px rgba(0, 0, 0, 0.15)
     cursor: pointer
-  &::after
-   
+
 .rqg-twitter-log
   width: 15px
  
