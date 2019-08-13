@@ -1,11 +1,12 @@
 <template lang="pug">
 .rqg-container
 
-  .rqg-header
-    .rqg-headline Random Quote Generator
-    .rqg-subtitle  A selection of finest quotes from aount the world
+  RandomeQouteGeneratorHeader
+    template(slot="custom-text" v-if="customeSlot")
+      h2.rqg-custom-headline  Welcome To Random Quote Generator
+      p.rqg-custom-subtitle A Selection of Quotes
 
-    hr.rqg-line-seperator
+  hr.rqg-line-seperator
 
   .rqg-qoutes-container
     .rqg-copy-button
@@ -27,11 +28,17 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import quotesData from '../assets/quotes.js'
+import RandomeQouteGeneratorHeader from '../components/randomQouteGeneratorHeader.vue'
 
-@Component({})
+@Component({
+  components: {
+    RandomeQouteGeneratorHeader
+  }
+})
 export default class RandomQuoteGenerator extends Vue {
 
   quotes = quotesData.quotes
+  customeSlot = false
 
 
   colors = ['#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
@@ -74,17 +81,6 @@ body
 
 .rqg-container
   text-align: center
-
-.rqg-headline
-  font-size: 50px
-  font-weight: bold
-  font-family: arial
-  margin: 10px
-  
-.rqg-subtitle
-  font-weight: bold
-  font-size: 20px
-  margin: 10px
  
 .rqg-line-seperator
   width: 50%
