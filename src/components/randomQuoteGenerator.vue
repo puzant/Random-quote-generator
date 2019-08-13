@@ -1,10 +1,11 @@
 <template lang="pug">
 .rqg-container
+
   .rqg-header
     .rqg-headline Random Quote Generator
     .rqg-subtitle  A selection of finest quotes from aount the world
 
-    hr
+    hr.rqg-line-seperator
 
   .rqg-qoutes-container
     .rqg-copy-button
@@ -25,22 +26,15 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import quotesData from '../assets/quotes.js'
 
 @Component({})
 export default class RandomQuoteGenerator extends Vue {
 
-quotes = [
-    {qoute: "Stay Hungry. Stay Foolish.", author: "Steve Jobs"},
-    {qoute: "Good Artists Copy, Great Artists Steal.", author: "Pablo Picasso"},
-    {qoute: "Argue with idiots, and you become an idiot.", author: "Paul Graham"},
-    {qoute: "Be yourself; everyone else is already taken.", author:"Oscar Wilde"},
-    {qoute: "Simplicity is the ultimate sophistication.", author: "Leonardo Da Vinci"},
-    {qoute: "Learn from the mistakes of others. You can't live long enough to make them all yourself.", author: "Eleanor Roosevelt"},
-    {qoute: "The most important thing to remember is this: to be ready at any moment to give up what you are for what you might become", author: "W.E.B. Du Bois"},
-    {qoute: "I know in my heart that man is good. That what is right will always eventually triumph. And there's purpose and worth to each and every life.", author: "Ronald Reagan"},
-  ]
+  quotes = quotesData.quotes
 
-  colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
+
+  colors = ['#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
 
   randomQoute = {qoute: "Stay Hungry. Stay Foolish.", author: "Steve Jobs"}
   randomBackgroundColor = "#16a085"
@@ -92,8 +86,12 @@ body
   font-size: 20px
   margin: 10px
  
-hr
-  width: 30%
+.rqg-line-seperator
+  width: 50%
+  border-width: 0 0 1px
+  color: #fff
+  border-image: linear-gradient(90deg, rgba(135, 206, 235, 0), #fff 50%, rgba(135, 206, 235, 0) 100%) 0 0 100%
+  border-style: solid
   
 .rqg-qoutes-container
   position: relative
